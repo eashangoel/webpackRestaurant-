@@ -1,37 +1,68 @@
-import TajLoc from './tajmahal.jpg'
-import eiffelLoc from './eiffel_tower.jpg'
+import eashanLoc from './eashuimage.jpg'
+import emailLoc from './email.png'
+import instaLoc from './instagram.png'
+import phoneLoc from './phone.png'
+import githubLoc from './github.png'
+import silverLoc from './silverware-variant.png'
 
-function createCard(imgsrc, content, head){
-    let cardDiv1 = document.createElement('div');
-    cardDiv1.classList.add("cardDiv");
-    let cardHeader1= document.createElement('h2');
-    cardHeader1.innerHTML= head
+function makeSkillsImage(imgsrc, div){
     let image1= new Image();
-    image1.classList.add('cardImage')
+    image1.classList.add('aboutSkillsImage')
     image1.src= imgsrc;
-    let p1 = document.createElement('p');
-    p1.innerHTML= content
-
-cardDiv1.appendChild(cardHeader1)
-cardDiv1.appendChild(p1);
-cardDiv1.appendChild(image1);
-return cardDiv1;
+    div.appendChild(image1);
 }
 
 export default function getAboutContent(){
     
     let mainDiv = document.createElement('div');
-    mainDiv.classList.add("mainDiv");
+    mainDiv.classList.add("mainAboutDiv");
     
     let header= document.createElement('h1');
-    header.innerHTML= "Eashan's ABOUT INFO";
+    header.innerHTML= "About Eashan Goel";
     
-    let cardDiv1 = createCard(TajLoc, "ABOUT PAGEEEE", "Taj Mahal")
-    let cardDiv2 = createCard(eiffelLoc, "ABOUT PAGEEEE", "Eiffel Tower")
-    
+    let image1= new Image();
+    image1.classList.add('cardAboutImage')
+    image1.src= eashanLoc;
+    let cardImage1 = document.createElement('div');
+    cardImage1.classList.add("aboutImageDiv");
+    cardImage1.appendChild(image1);
+
+    let aboutDiv = document.createElement('div');
+    aboutDiv.classList.add("aboutDiv");
+    let cardHeader1= document.createElement('h2');
+    cardHeader1.innerHTML= "My journey"
+    let p1 = document.createElement('p');
+    p1.innerHTML= `lorem fviuwbrovw okrnvow knvow bnwofibnwr onvworinvo rwinv ownwokn
+    lorem fviuwbrovw okrnvow knvow bnwofibnwr onvworinvo rwinv ownwokn
+    lorem fviuwbrovw okrnvow knvow bnwofibnwr onvworinvo rwinv ownwokn
+    lorem fviuwbrovw okrnvow knvow bnwofibnwr onvworinvo rwinv ownwokn
+    lorem fviuwbrovw okrnvow knvow bnwofibnwr onvworinvo rwinv ownwokn
+    lorem fviuwbrovw okrnvow knvow bnwofibnwr onvworinvo rwinv ownwokn`
+
+    let skills1Div = document.createElement('div');
+    skills1Div.classList.add("skills1Div");
+    let cardHeader2= document.createElement('h2');
+    cardHeader2.innerHTML= "Skills"
+
+
+    aboutDiv.appendChild(cardHeader1);
+    aboutDiv.appendChild(p1);
+
+    skills1Div.appendChild(cardHeader2);
+
+    let skillsDiv = document.createElement('div');
+    skillsDiv.classList.add("skillsDiv");
+    makeSkillsImage(emailLoc, skillsDiv);
+    makeSkillsImage(instaLoc, skillsDiv);
+    makeSkillsImage(phoneLoc, skillsDiv);
+    makeSkillsImage(silverLoc, skillsDiv);
+    makeSkillsImage(githubLoc, skillsDiv);
+    skills1Div.appendChild(skillsDiv);
+
     mainDiv.appendChild(header);
-    mainDiv.appendChild(cardDiv1);
-    mainDiv.appendChild(cardDiv2);
+    mainDiv.appendChild(cardImage1);
+    mainDiv.appendChild(aboutDiv);
+    mainDiv.appendChild(skills1Div);
  
     return mainDiv;
 }
