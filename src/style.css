@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Condensed:ital,wght@1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
     /* border: 2px solid red */
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Roboto Condensed', sans-serif;  
 }
 a {
     color: blue;
@@ -18,7 +21,7 @@ html{
     padding-top: 2%; 
     padding-bottom: 3%; 
     margin-left: 15%;
-    background-color: lightgray;
+    background-color: burlywood;
     color: black;
     display: flex;
     flex-direction: column;
@@ -26,10 +29,21 @@ html{
     gap: 1.5rem;
     width: 70%;
 }
+.bannerDiv{
+    width: 50%;
+    height: 20%;
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+}
+.bannerImage{
+    padding: 2%;
+}
 
 h1{
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    text-shadow: 2px 1px lightgoldenrodyellow;
 }
 .menuBar{
     width: 100%;
