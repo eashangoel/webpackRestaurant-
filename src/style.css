@@ -14,6 +14,15 @@ a:hover{
     cursor: pointer;
     color: brown;
 }
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 html{
   background-color: lightgoldenrodyellow;
 }
@@ -123,6 +132,10 @@ h1{
     height: 70%;
     width: 50%;
     margin-left: 30%;
+}
+.contactImage:hover{
+    animation-name: rotate;
+    animation-duration: 0.7s;
 }
 /* contact page */
 
